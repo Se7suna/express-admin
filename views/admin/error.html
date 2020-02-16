@@ -1,0 +1,15 @@
+{{extend './layout.html'}}
+
+{{block 'main'}}
+<h4 style="text-align: center; background-color: #cecece; padding: 40px 0; margin:100px 20px 0;">
+  {{msg}}
+</h4>
+{{/block}}
+
+{{block 'js'}}
+<script>
+  setTimeout(() => {
+    window.history.back()
+  }, 3000)
+</script>
+{{/block}}

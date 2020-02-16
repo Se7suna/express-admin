@@ -1,0 +1,34 @@
+{{extend './layout.html'}}
+
+{{block 'main'}}
+<div class="login-body">
+    <div class="login-container">
+        <h4 class="title">黑马程序员 - 博客管理员登录</h4>
+        <div class="login">
+            <form action="/admin/login" method="POST" id="loginForm">
+                <div class="form-group">
+                    <label>邮件</label>
+                    <input type="email" class="form-control" placeholder="请输入邮件地址" name="email">
+                </div>
+                <div class="form-group">
+                    <label>密码</label>
+                    <input type="password" class="form-control" placeholder="请输入密码" name="password">
+                </div>
+                <button type="submit" class="btn btn-primary">登录</button>
+            </form>
+        </div>
+        <div class="tips"></div>
+    </div>
+</div>
+{{/block}}
+{{block 'js'}}
+<script>
+    $('#loginForm').on('submit', function () {
+        const data = getData(this)
+        if (data.email.trim() === '' || data.password.trim() === '') {
+            alert('信息填写不完整')
+            // return false
+        }
+    })
+</script>
+{{/block}}
